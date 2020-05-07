@@ -7,6 +7,7 @@ public class Turnonlightbehavoir : MonoBehaviour
     [SerializeField]
     private Light playerLight = null;
 
+    public float LightFuel = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +21,14 @@ public class Turnonlightbehavoir : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Hi");
         playerLight.enabled = true;
         if (playerLight.enabled == true)
         {
-
+            if (LightFuel <= 0)
+            {
+                LightFuel = 0;
+                playerLight.enabled = false;
+            }
         }
     }
 }
