@@ -7,6 +7,8 @@ public class EnemyBehavoir : MonoBehaviour
     [SerializeField]
     private Light Playerlight;
 
+    public int speed;
+
     //Make sure this is set to the player
     public Transform Player;
 
@@ -21,10 +23,18 @@ public class EnemyBehavoir : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 moveDirection = new Vector3(0, 0, 0);
         //Checks if the light is on
         if(Playerlight.enabled == true)
         {
-            
+            if(Hidefromlightlocation != null)
+            {
+                moveDirection = Hidefromlightlocation.position - transform.position;
+            }
+        }
+        if (Playerlight.enabled == false)
+        {
+
         }
     }
 }
