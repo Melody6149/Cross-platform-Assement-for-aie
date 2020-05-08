@@ -1,16 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(NavMeshAgent))]
 public class EnemyBehavior : MonoBehaviour
 {
     [SerializeField]
     private Light Playerlight;
 
-    public CharacterController controller;
-
-    public int speed;
+    public NavMeshAgent agent;
 
     //Make sure this is set to the player
     public Transform Player;
@@ -26,27 +25,24 @@ public class EnemyBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 moveDirection = new Vector3(0, 0, 0);
+        
         //Checks if the light is on
         if(Playerlight.enabled == true)
         {
             if(Hidefromlightlocation != null)
             {
-                moveDirection = Hidefromlightlocation.position - transform.position;
-                moveDirection.Normalize();
+                agent.SetDestination(Hidefromlightlocation.transform.position);
             }
         }
         if (Playerlight.enabled == false)
         {
             if (Player != null)
             {
-                moveDirection = Player.position - transform.position;
-                moveDirection.Normalize();
+                agent.SetDestination(Player.transform.position);
             }
         }
-        moveDirection *= speed;
-
-        controller.Move(moveDirection * Time.deltaTime);
+        
+        
     }
     
 }

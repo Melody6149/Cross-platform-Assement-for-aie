@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 084fed0025be91946a17df3cd29c5f6b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   charactercontroller: {fileID: 6034343229049839382}
+  enemy: {fileID: 0}
 --- !u!114 &6034343229049839467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,8 +145,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLight: {fileID: 6034343229525195475}
-  LightFuel: 0
-  RechargeLight: 6000
+  LightTimer: 0
+  lightRecharger: {fileID: 0}
+  ResetTimerValue: 2
 --- !u!1 &6034343229525195484
 GameObject:
   m_ObjectHideFlags: 0
