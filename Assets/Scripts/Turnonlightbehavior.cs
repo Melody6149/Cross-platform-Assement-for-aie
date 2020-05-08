@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turnonlightbehavoir : MonoBehaviour
+public class Turnonlightbehavior : MonoBehaviour
 {
     [SerializeField]
     private Light playerLight = null;
 
     public float LightFuel = 0;
+
+    //Used to check for collision with the right trigger
+    public Collider lightRecharger;
 
     //sets the value that the light will recharge to when the player enters the trigger
     public float RechargeLight = 2;
@@ -35,9 +38,15 @@ public class Turnonlightbehavoir : MonoBehaviour
             }
         }
     }
+    //checks for collision
     private void OnTriggerEnter(Collider other)
     {
-        playerLight.enabled = true;
-        LightFuel = RechargeLight;
+        //Makes sure only a place that recharges the light activates it
+        if (other == lightRecharger)
+        {
+            Debug.Log("If this is always showing this is not a good thing");
+            playerLight.enabled = true;
+            LightFuel = RechargeLight;
+        }
     }
 }

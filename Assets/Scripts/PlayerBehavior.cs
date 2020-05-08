@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Mousemovebehavoir : MonoBehaviour
+public class PlayerBehavior : MonoBehaviour
 {
     public float speed = 1.0f;
 
     public CharacterController charactercontroller;
 
+    public BoxCollider enemy;
 
     // Update is called once per frame
     void Update()
@@ -37,4 +39,14 @@ public class Mousemovebehavoir : MonoBehaviour
         //Move
         charactercontroller.SimpleMove(movement);
     }
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other == enemy)
+        {
+            Debug.Log("It workes");
+            SceneManager.LoadScene(2);
+        }
+    }
 }
+
+

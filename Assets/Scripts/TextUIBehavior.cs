@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TextUIBehavoir : MonoBehaviour
+public class TextUIBehavior : MonoBehaviour
 {
     public Text uitext;
     [SerializeField]
-    private Turnonlightbehavoir PlayerLight;
+    private Turnonlightbehavior PlayerLight;
     // Start is called before the first frame update
     void Start()
     {

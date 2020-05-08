@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class EnemyBehavoir : MonoBehaviour
+public class EnemyBehavior : MonoBehaviour
 {
     [SerializeField]
     private Light Playerlight;
@@ -48,4 +48,5 @@ public class EnemyBehavoir : MonoBehaviour
 
         controller.Move(moveDirection * Time.deltaTime);
     }
+    
 }
