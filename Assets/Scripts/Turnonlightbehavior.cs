@@ -7,13 +7,14 @@ public class Turnonlightbehavior : MonoBehaviour
     [SerializeField]
     private Light playerLight = null;
 
-    public float LightFuel = 0;
+
+    public float LightTimer = 0;
 
     //Used to check for collision with the right trigger
     public Collider lightRecharger;
 
     //sets the value that the light will recharge to when the player enters the trigger
-    public float RechargeLight = 2;
+    public float ResetTimerValue = 2;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,16 +25,16 @@ public class Turnonlightbehavior : MonoBehaviour
     void Update()
     {
         //LightFuel -= Time.deltaTime;
-        LightFuel -= 1 * Time.deltaTime;
-        if (LightFuel < 0)
+        LightTimer -= 1 * Time.deltaTime;
+        if (LightTimer < 0)
         {
-            LightFuel = 0;
+            LightTimer = 0;
         }
             if (playerLight.enabled == true)
         {
-            if (LightFuel <= 0)
+            if (LightTimer <= 0)
             {
-                LightFuel = 0;
+                LightTimer = 0;
                 playerLight.enabled = false;
             }
         }
@@ -46,7 +47,7 @@ public class Turnonlightbehavior : MonoBehaviour
         {
             Debug.Log("If this is always showing this is not a good thing");
             playerLight.enabled = true;
-            LightFuel = RechargeLight;
+            LightTimer = ResetTimerValue;
         }
     }
 }

@@ -17,6 +17,6 @@ public class TextUIBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        uitext.text = (PlayerLight.LightFuel.ToString());
+        uitext.text = (PlayerLight.LightTimer.ToString());
     }
 }
