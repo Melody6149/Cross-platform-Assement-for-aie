@@ -1159,6 +1159,11 @@ PrefabInstance:
       propertyPath: lightRecharger
       value: 
       objectReference: {fileID: 117859232}
+    - target: {fileID: 6034343229049839467, guid: 3e50965bf6396ce42854ad8f3083c78a,
+        type: 3}
+      propertyPath: ResetTimerValue
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6034343229525195475, guid: 3e50965bf6396ce42854ad8f3083c78a,
         type: 3}
       propertyPath: m_Enabled
