@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
 public class EnemyBehavoir : MonoBehaviour
 {
     [SerializeField]
     private Light Playerlight;
+
+    public CharacterController controller;
 
     public int speed;
 
@@ -30,11 +33,19 @@ public class EnemyBehavoir : MonoBehaviour
             if(Hidefromlightlocation != null)
             {
                 moveDirection = Hidefromlightlocation.position - transform.position;
+                moveDirection.Normalize();
             }
         }
         if (Playerlight.enabled == false)
         {
-
+            if (Player != null)
+            {
+                moveDirection = Player.position - transform.position;
+                moveDirection.Normalize();
+            }
         }
+        moveDirection *= speed;
+
+        controller.Move(moveDirection * Time.deltaTime);
     }
 }
