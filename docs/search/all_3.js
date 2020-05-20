@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hidefromlightlocation_5',['Hidefromlightlocation',['../class_enemy_behavior.html#a19ed7ebf500e35742d7d3c183d170de0',1,'EnemyBehavior']]]
+  ['hidefromlightlocation_7',['Hidefromlightlocation',['../class_enemy_behavior.html#a19ed7ebf500e35742d7d3c183d170de0',1,'EnemyBehavior']]]
 ];
