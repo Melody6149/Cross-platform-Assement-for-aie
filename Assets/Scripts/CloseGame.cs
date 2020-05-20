@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/**
+ * Used to close the game when escape is pushed
+ * */
+
 
 public class CloseGame : MonoBehaviour
 {

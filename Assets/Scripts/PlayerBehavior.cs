@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/**
+*  This script is used for player movement
+*/
+
 public class PlayerBehavior : MonoBehaviour
 {
+    /** This  is used to set the speed of the player*/
     public float speed = 1.0f;
-
+    /** This will get the character controller of the player*/
     public CharacterController charactercontroller;
 
+    /**This will take in the collider for the enemy so i can check if the trigger is the right trigger */
     public BoxCollider enemy;
 
     // Update is called once per frame
@@ -39,7 +45,7 @@ public class PlayerBehavior : MonoBehaviour
         //Move
         charactercontroller.SimpleMove(movement);
     }
-    public void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider other)
     {
         if(other == enemy)
         {
